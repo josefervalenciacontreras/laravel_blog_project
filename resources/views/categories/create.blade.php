@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
     <form action="{{route('categories.store')}}" method="post">
        @csrf
-       <label for="category_name">Nombre Categoría</label>
-       <input type="text" name="category_name" id="category_name" placeholder="Category Name">
-       <label for="active">Activa</label>
-       <input type="checkbox" name="active" id="active" value="0">
-       <button type="submit">Guardar</button> 
+       <div class="form-group">
+            <div class="mb-3">
+                <label for="category_name" class="form-label">Nombre Categoría</label>
+                <input class="form-control" type="text" name="category_name" id="category_name" placeholder="Category Name">
+            </div>
+            <div class="mb-3">
+                <label for="active">Activa</label>
+                <input class="form-check-input" type="checkbox" name="active" id="active" value="1">
+            </div>
+            
+            <button class="btn btn-primary" type="submit">Guardar</button> 
+       </div>
     </form>
-</body>
-</html>
+@endsection
