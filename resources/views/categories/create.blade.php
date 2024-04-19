@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <form action="{{route('categories.store')}}" method="post">
        @csrf
        <div class="form-group">
@@ -13,7 +14,8 @@
                 <input class="form-check-input" type="checkbox" name="active" id="active" value="1">
             </div>
             
-            <button class="btn btn-primary" type="submit">Guardar</button> 
+            <button class="btn btn-primary mb-3"  type="submit">Guardar</button> 
        </div>
     </form>
+</div>
 @endsection

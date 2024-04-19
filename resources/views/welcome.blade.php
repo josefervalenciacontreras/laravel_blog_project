@@ -7,12 +7,10 @@
 </head>
 <body>
     @php
-        $student_name = "Jhon Doe";
-        $student_age = 25;
+        $student_name = "José Fernando";
     @endphp
     <div>
         <h1> Bienvenido, {{$student_name}}</h1>
-        <p>Tu edad es, {{$student_age}}</p>
     </div>
 </body>
 </html>
