@@ -41,6 +41,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        $post->load('category');
         return view('posts.show', compact('post'));
     }
 
@@ -49,15 +50,16 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(CreatePostRequest $request, Post $post)
     {
-        //
+        $post->update($request->validated());
+        return redirect()->route('posts.index')->with('success', 'Category updated succesfully');
     }
 
     /**
@@ -65,6 +67,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('posts.index')->with('success', 'Category deleted successfully');
     }
 }
