@@ -50,7 +50,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        $categories = Category::all();
+        return view('posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -58,6 +59,7 @@ class PostController extends Controller
      */
     public function update(CreatePostRequest $request, Post $post)
     {
+        //$validated = $request->validated();
         $post->update($request->validated());
         return redirect()->route('posts.index')->with('success', 'Category updated succesfully');
     }
@@ -68,6 +70,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->route('posts.index')->with('success', 'Category deleted successfully');
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully');
     }
 }

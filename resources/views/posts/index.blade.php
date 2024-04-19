@@ -23,7 +23,7 @@
                     <td>
                         <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info mx-1">Ver</a>
                         <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary">Editar</a>
-                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline">
                             @csrf
                             @method('DELETE')
                             <a href="{{ route('posts.destroy', $post->id) }}"  type="button" class="btn btn-danger my-2">Eliminar</a>

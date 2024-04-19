@@ -12,10 +12,11 @@
     <p>{{ $post->created_at }}</p>
     <p>{{ $post->update_at }}</p>
     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary">Editar</a>
-    <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+    <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger my-2">Eliminar</button>
     </form>
+    <a href="{{ url()->previous() }}" class="btn btn-secondary mx-1">Atrás</a>
 </div>
 @endsection
