@@ -14,7 +14,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="content">Contenido</label>
-                            <textarea name="content" id="content" rows="5" class="form-control"></textarea>
+                            <textarea class="form-control" id="content" placeholder="Enter the Description" rows="5" name="content"></textarea>
                         </div>
                         <div class="form-group mb-3">
                             <label for="category">Categoría:</label>
